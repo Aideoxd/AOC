@@ -1,0 +1,30 @@
+import sys
+tot=0
+list1 = []
+i = input()
+list1=sys.stdin.readlines()
+print(list1)
+print(str(len(list1)))
+for m in range(len(list1)):
+  print(list1[m])  
+  list1[m]=int(list1[m])
+list1.sort()
+print(list1)
+list2 = []
+j = input()
+while j != '':
+    list2.append([int(t) for t in j.split()])
+    j = input()
+for l in range (len(list2)):
+                list2[l]=int(list2[l])
+list2.sort()
+for k in range (len(list1)):
+    if list1[k]>list2[k]:
+        diff=list1[k]-list2[k]
+    elif list1[k]<list2[k]:
+        diff=list2[k]-list1[k]
+    else:
+        diff=0
+    tot+=diff
+print(tot)  
+    
